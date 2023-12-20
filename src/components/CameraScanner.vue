@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue";
 import { StreamBarcodeReader } from "vue-barcode-reader";
 
@@ -8,7 +8,7 @@ const onLoaded = () => {
   console.log("loaded");
 };
 
-const onDecode = (text) => {
+const onDecode = (text: any) => {
   decodedText.value = text;
 };
 </script>
