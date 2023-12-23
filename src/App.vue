@@ -1,13 +1,23 @@
-<script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import CameraScanner from "./components/CameraScanner.vue";
-</script>
-
 <template>
-  <h1>Vue Barcode Reader Demo</h1>
-  <CameraScanner />
+  <div>
+    <button @click="showSecondComponent">Show Second Component</button>
+    <!-- Conditional rendering based on a boolean value -->
+    <FirstComponent v-if="!showSecond"></FirstComponent>
+    <CameraScannel v-if="showSecond"></CameraScannel>
+  </div>
 </template>
+
+<script>
+import CameraScannel from './components/CameraScanner.vue';
+import FirstComponent from './components/first.vue'
+const decodedText = false;
+
+
+const showSecondComponent = () => {
+  this.showSecond = true;
+};
+
+</script>
 
 <style>
 #app {
